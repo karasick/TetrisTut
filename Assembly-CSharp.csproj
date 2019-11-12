@@ -60,10 +60,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Controllers\LevelController.cs" />
-    <Compile Include="Assets\Scripts\Controllers\MainMenuController.cs" />
-    <Compile Include="Assets\Scripts\Game.cs" />
+    <Compile Include="Assets\Scripts\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\SceneControllers\LevelController.cs" />
+    <Compile Include="Assets\Scripts\SceneControllers\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\TetrisBlock.cs" />
+    <Compile Include="Assets\Scripts\TetrisBlockSpawner.cs" />
+    <Compile Include="Assets\Scripts\TetrisGrid.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/[projects]/Unity/GitHub/TetrisTut/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
