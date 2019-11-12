@@ -2,13 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject endGamePanel = null;
+    private GameObject EndGamePanel = null;
     [SerializeField]
     private GameObject pausePanel = null;
+    [SerializeField]
+    private Text scoreText = null;
     [SerializeField]
     private GameObject pauseButton = null;
 
@@ -23,17 +26,24 @@ public class LevelController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(isLose)
-        {
-            Time.timeScale = 0f;
-            //endGamePanel.SetActive(true);
-            pauseButton.SetActive(false);
-        }
+
     }
 
     void Awake()
     {
 
+    }
+
+    public void SaveLevel()
+    {
+        Time.timeScale = 0f;
+
+        isLose = true;
+        SaveLoad.Save();
+
+        scoreText.text = "Score : " + ScoreManager.score;
+        EndGamePanel.SetActive(true);
+        pauseButton.SetActive(false);
     }
 
     public void PauseButtonClick()
@@ -48,6 +58,11 @@ public class LevelController : MonoBehaviour
         Time.timeScale = 1f;
         pausePanel.SetActive(false);
         pauseButton.SetActive(true);
+    }
+
+    public void RetryButtonClick()
+    {
+        SceneManager.LoadScene("Level");
     }
 
     public void ToMenuButtonClick()

@@ -152,7 +152,6 @@ public class TetrisGrid : MonoBehaviour
     public static bool IsEndGame()
     {
         FindCurrentHeight();
-        print(currentHeight);
 
         if (currentHeight >= number_of_rows - 3)
         {

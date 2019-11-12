@@ -7,14 +7,24 @@ using UnityEngine.SceneManagement;
 public class MainMenuController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject gamePanel = null;
+    private GameObject gameModePanel = null;
+    [SerializeField]
+    private GameObject customModePanel = null;
     [SerializeField]
     private GameObject optionsPanel = null;
+    [SerializeField]
+    private GameObject scoreboardPanel = null;
 
     // Start is called before the first frame update
     void Start()
     {
         optionsPanel.SetActive(false);
+
+        SaveLoad.Load();
+        foreach (int score in SaveLoad.savedScores)
+        {
+            print(score);
+        }
     }
 
     // Update is called once per frame
@@ -23,33 +33,54 @@ public class MainMenuController : MonoBehaviour
 
     }
 
-    public void Play()
+    public void PlayButtonClick()
+    {
+        gameModePanel.SetActive(true);
+    }
+
+    public void StartGameButtonClick()
     {
         SceneManager.LoadScene("Level");
     }
 
-    public void Options()
+    public void CustomModeButtonClick()
+    {
+        customModePanel.SetActive(true);
+    }
+
+    public void OptionsButtonClick()
     {
         optionsPanel.SetActive(true);
     }
 
-    public void Exit()
+    public void ScoreboardButtonClick()
+    {
+        scoreboardPanel.SetActive(true);
+    }
+
+    public void ExitButtonClick()
     {
         Application.Quit();
     }
 
-    public void ChangeStyle()
+    public void ChangeStyleButtonClick()
     {
 
     }
 
-    public void ChangeSomething()
+    public void BackButtonClick()
     {
-
-    }
-
-    public void Back()
-    {
+        if(customModePanel.activeSelf)
+        {
+            customModePanel.SetActive(false);
+        }
+        else
+        {
+            gameModePanel.SetActive(false);
+        }
         optionsPanel.SetActive(false);
+        scoreboardPanel.SetActive(false);
     }
+
+
 }

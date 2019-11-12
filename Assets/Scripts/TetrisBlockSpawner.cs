@@ -23,7 +23,7 @@ public class TetrisBlockSpawner : MonoBehaviour
     {
         if(TetrisGrid.IsEndGame())
         {
-            FindObjectOfType<LevelController>().isLose = true;
+            FindObjectOfType<LevelController>().SaveLevel();
         }
         else
         {
