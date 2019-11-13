@@ -65,6 +65,9 @@
     <Compile Include="Assets\Scripts\Level\TetrisBlock.cs" />
     <Compile Include="Assets\Scripts\Level\TetrisBlockSpawner.cs" />
     <Compile Include="Assets\Scripts\Level\TetrisGrid.cs" />
+    <Compile Include="Assets\Scripts\Level\Views\EndGamePanel.cs" />
+    <Compile Include="Assets\Scripts\Level\Views\LevelPanel.cs" />
+    <Compile Include="Assets\Scripts\Level\Views\PausePanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\CustomModePanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\GameModePanel.cs" />
@@ -72,9 +75,6 @@
     <Compile Include="Assets\Scripts\MainMenu\Views\OptionsPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\Panel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\ScoreboardPanel.cs" />
-    <Compile Include="Assets\Scripts\old\SceneControllers\LevelController.cs" />
-    <Compile Include="Assets\Scripts\old\SceneControllers\MainMenuController.cs" />
-    <Compile Include="Assets\Scripts\old\Scoreboard.cs" />
     <Compile Include="Assets\Scripts\Score\SaveLoadScore.cs" />
     <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

@@ -8,12 +8,13 @@ public class TetrisBlock : MonoBehaviour
     public float fallSpeed = 1f;
 
     private float pushSpeed = 0.1f;
+    private float levelSpeedAcceleration = 0.25f;
     private float fallTime = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        fallSpeed = fallSpeed - (float)ScoreManager.speedLevel / 10;
+        fallSpeed = fallSpeed - (float)ScoreManager.speedLevel * levelSpeedAcceleration;
         InvokeRepeating("BlockFall", 0f, fallSpeed);
     }
 

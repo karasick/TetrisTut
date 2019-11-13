@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("checkTime", 0f, 1f);
+        //InvokeRepeating("checkTime", 0f, 1f);
     }
 
     private void Awake()
@@ -30,24 +30,31 @@ public class ScoreManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        // Reset gameTime
+        gameTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        gameTime = (int)Time.time;
+        checkTime();
     }
+
 
     public void AddScore()
     {
         score++;
     }
 
+
     private void checkTime()
     {
-        if(gameTime / (secFoLevelingUp * speedLevel) >= 1)
+        gameTime = (int)Time.time;
+
+        if (gameTime / (secFoLevelingUp * speedLevel) >= 1)
         {
-            if(speedLevel < 9)
+            if(speedLevel < 3)
             {
                 speedLevel++;
             }

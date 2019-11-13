@@ -9,20 +9,23 @@ public class TetrisBlockSpawner : MonoBehaviour
 
     void Awake()
     {
-        if(FindObjectOfType<GameMode>())
-        {
-            tetrisObjects = FindObjectOfType<GameMode>().GetTetrisObjects();
-        } else
-        {
-            SceneManager.LoadScene("MainMenu");
-        }
-        SpawnRandom();
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
 
+        if (FindObjectOfType<GameMode>())
+        {
+            tetrisObjects = FindObjectOfType<GameMode>().GetTetrisObjects();
+
+            SpawnRandom();
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
     // Update is called once per frame
@@ -35,7 +38,7 @@ public class TetrisBlockSpawner : MonoBehaviour
     {
         if(TetrisGrid.IsEndGame())
         {
-            FindObjectOfType<LevelController>().SaveLevel();
+            FindObjectOfType<Level>().SaveLevel();
             TetrisGrid.ClearCurrentHeight();
         }
         else
