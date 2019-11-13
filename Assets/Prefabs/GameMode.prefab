@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2360047001007569997
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2360047001007569999}
+  - component: {fileID: 2360047001007569996}
+  m_Layer: 0
+  m_Name: GameMode
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2360047001007569999
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360047001007569997}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.294608, y: -15.027195, z: 188.06903}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2360047001007569996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2360047001007569997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db09687fc327fcc4e8483cb298d1fcd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tetrisObjects:
+  - {fileID: 2430090056806955166, guid: 8178ddc1e98a0b44588693855efd3da5, type: 3}
+  - {fileID: 300809608121285772, guid: eb4dc16bb03da2a42947ccf1ce619a82, type: 3}
+  - {fileID: 3076944644236700358, guid: ca35f7a9e6a274a419d514b17eab2dc9, type: 3}
+  - {fileID: 7810428239236720592, guid: 4568f391bb7102e40b1322341b6f3463, type: 3}
+  - {fileID: 5825262817994445784, guid: f57fa807133c2f846a8089a5c2e55bc6, type: 3}
+  - {fileID: 48916677791040691, guid: 49619a03813063c4aa4ad2a47f2b0679, type: 3}
+  - {fileID: 2706301829885577456, guid: 32ed67910e64d044ba9ad221cb862bb2, type: 3}
+  gameMode: original

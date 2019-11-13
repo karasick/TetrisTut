@@ -60,13 +60,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SaveLoad.cs" />
-    <Compile Include="Assets\Scripts\SceneControllers\LevelController.cs" />
-    <Compile Include="Assets\Scripts\SceneControllers\MainMenuController.cs" />
-    <Compile Include="Assets\Scripts\ScoreManager.cs" />
-    <Compile Include="Assets\Scripts\TetrisBlock.cs" />
-    <Compile Include="Assets\Scripts\TetrisBlockSpawner.cs" />
-    <Compile Include="Assets\Scripts\TetrisGrid.cs" />
+    <Compile Include="Assets\Scripts\GameMode.cs" />
+    <Compile Include="Assets\Scripts\Level\Level.cs" />
+    <Compile Include="Assets\Scripts\Level\TetrisBlock.cs" />
+    <Compile Include="Assets\Scripts\Level\TetrisBlockSpawner.cs" />
+    <Compile Include="Assets\Scripts\Level\TetrisGrid.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\CustomModePanel.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\GameModePanel.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\MainPanel.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\OptionsPanel.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\Panel.cs" />
+    <Compile Include="Assets\Scripts\MainMenu\Views\ScoreboardPanel.cs" />
+    <Compile Include="Assets\Scripts\old\SceneControllers\LevelController.cs" />
+    <Compile Include="Assets\Scripts\old\SceneControllers\MainMenuController.cs" />
+    <Compile Include="Assets\Scripts\old\Scoreboard.cs" />
+    <Compile Include="Assets\Scripts\Score\SaveLoadScore.cs" />
+    <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/[projects]/Unity/GitHub/TetrisTut/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
