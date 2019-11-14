@@ -1563,7 +1563,7 @@ PrefabInstance:
     - target: {fileID: 5237039995215269298, guid: f91d8702ca2c16d4fac9cc7261784c5a,
         type: 3}
       propertyPath: m_Name
-      value: LevelPanel
+      value: GamePanel
       objectReference: {fileID: 0}
     - target: {fileID: 5237039995215269297, guid: f91d8702ca2c16d4fac9cc7261784c5a,
         type: 3}

@@ -11,17 +11,6 @@ public class TetrisGrid : MonoBehaviour
 
     public static Transform[,] Grid = new Transform[NumberOfColumns, NumberOfRows];
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public static Vector2 RoundVector(Vector2 vector)
     {

@@ -2,26 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameModePanel : MonoBehaviour
+public class GameModePanel : MainMenuPanel
 {
-    [SerializeField]
-    private MainMenu MainMenu;
-
-
-    public void StartGameButtonClick()
-    {
-        MainMenu.StartGameButtonClick();
-    }
-
-
     public void CustomModeButtonClick()
     {
         MainMenu.CustomModeButtonClick();
-    }
-
-
-    public void BackButtonClick()
-    {
-        MainMenu.BackButtonClick();
     }
 }

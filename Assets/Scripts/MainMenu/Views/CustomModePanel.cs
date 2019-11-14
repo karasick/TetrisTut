@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CustomModePanel : MonoBehaviour
+public class CustomModePanel : MainMenuPanel
 {
-    [SerializeField]
-    private MainMenu MainMenu;
-
     [SerializeField]
     private Button[] CheckBoxButtons = null;
 
@@ -41,17 +38,5 @@ public class CustomModePanel : MonoBehaviour
             CheckBoxButtons[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/old/activeCheckbox");
         }
         MainMenu.CheckboxButtonClick(index);
-    }
-
-
-    public void StartGameButtonClick()
-    {
-        MainMenu.StartGameButtonClick();
-    }
-
-
-    public void BackButtonClick()
-    {
-        MainMenu.BackButtonClick();
     }
 }

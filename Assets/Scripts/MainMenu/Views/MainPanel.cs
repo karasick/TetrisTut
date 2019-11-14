@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainPanel : MonoBehaviour
+public class MainPanel : MainMenuPanel
 {
-    [SerializeField]
-    private MainMenu MainMenu;
-
     public void PlayButtonClick()
     {
         MainMenu.PlayButtonClick();

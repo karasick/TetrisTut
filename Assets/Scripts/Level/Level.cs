@@ -43,7 +43,7 @@ public class Level : MonoBehaviour
 
         LoadSprites();
 
-        SetActivePanel("LevelPanel");
+        SetActivePanel("GamePanel");
 
         SetLevelSprite("forest");
     }
@@ -151,11 +151,11 @@ public class Level : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-            FindObjectOfType<LevelPanel>().SetInputsVisibility(false);
+            FindObjectOfType<GamePanel>().SetInputsVisibility(false);
         }
         else if (Application.platform == RuntimePlatform.Android)
         {
-            FindObjectOfType<LevelPanel>().SetInputsVisibility(true);
+            FindObjectOfType<GamePanel>().SetInputsVisibility(true);
         }
     }
 

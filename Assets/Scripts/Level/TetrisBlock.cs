@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TetrisBlock : MonoBehaviour
 {
-    private LevelPanel LevelPanel;
+    private GamePanel GamePanel;
 
     public float FallSpeed = 1f;
 
@@ -16,7 +16,7 @@ public class TetrisBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        LevelPanel = FindObjectOfType<LevelPanel>();
+        GamePanel = FindObjectOfType<GamePanel>();
         FallSpeed = FallSpeed - (float)ScoreManager.SpeedLevel * LevelSpeedAcceleration;
         InvokeRepeating("BlockFall", 0f, FallSpeed);
     }

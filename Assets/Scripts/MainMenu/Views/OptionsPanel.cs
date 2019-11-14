@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class OptionsPanel : MonoBehaviour
+public class OptionsPanel : MainMenuPanel
 {
-    [SerializeField]
-    private MainMenu MainMenu;
-
     [SerializeField]
     private Sprite[] MenuSprites = null;
 
@@ -21,11 +18,5 @@ public class OptionsPanel : MonoBehaviour
     public void ChangeStyleButtonClick()
     {
         MainMenu.ChangeStyleButtonClick();
-    }
-
-
-    public void BackButtonClick()
-    {
-        MainMenu.BackButtonClick();
     }
 }

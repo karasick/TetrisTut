@@ -50,17 +50,10 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     /*
      * Handlings
      * 
      */
-    
     private void SetActivePanel(string panelNameNew)
     {
         foreach(GameObject Panel in Panels)
@@ -108,10 +101,6 @@ public class MainMenu : MonoBehaviour
         MenuSprites = Resources.LoadAll<Sprite>("Sprites/menu");
     }
 
-    /*
-     * Events
-     * 
-     */
 
     public void PlayButtonClick()
     {

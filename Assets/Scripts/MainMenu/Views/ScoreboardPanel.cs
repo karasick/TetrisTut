@@ -3,11 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreboardPanel : MonoBehaviour
+public class ScoreboardPanel : MainMenuPanel
 {
-    [SerializeField]
-    private MainMenu MainMenu;
-
     [SerializeField]
     private Text[] TopPlayersScoresObjects = null;
 
@@ -36,11 +33,5 @@ public class ScoreboardPanel : MonoBehaviour
                 return;
             }
         }
-    }
-
-
-    public void BackButtonClick()
-    {
-        MainMenu.BackButtonClick();
     }
 }

@@ -7,11 +7,6 @@ public class TetrisBlockSpawner : MonoBehaviour
 {
     private GameObject[] TetrisObjects;
 
-    void Awake()
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,12 +21,6 @@ public class TetrisBlockSpawner : MonoBehaviour
         {
             SceneManager.LoadScene("MainMenu");
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void SpawnRandom()
