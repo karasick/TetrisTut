@@ -9,7 +9,7 @@ public class ScoreManager : MonoBehaviour
 
     public static List<int> savedScores = new List<int>();
 
-    public static int gameTime = 0;
+    public static float gameTime = 0;
     public static int speedLevel = 1;
     public static int secFoLevelingUp = 10;
     public static int score = 0;
@@ -31,8 +31,10 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        // Reset gameTime
+        // Reset score parameters
         gameTime = 0;
+        speedLevel = 1;
+        score = 0;
     }
 
     // Update is called once per frame
@@ -50,7 +52,7 @@ public class ScoreManager : MonoBehaviour
 
     private void checkTime()
     {
-        gameTime = (int)Time.time;
+        gameTime += Time.deltaTime;
 
         if (gameTime / (secFoLevelingUp * speedLevel) >= 1)
         {

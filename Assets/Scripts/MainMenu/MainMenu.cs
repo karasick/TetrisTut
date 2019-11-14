@@ -39,7 +39,14 @@ public class MainMenu : MonoBehaviour
 
         SetActivePanel("MainPanel");
 
-        SetMenuSprite("menu-01");
+        if(PlayerPrefs.HasKey("menuSprite"))
+        {
+            SetMenuSprite(SaveLoadPrefs.loadMenuSprite());
+        }
+        else
+        {
+            SetMenuSprite("menu-01");
+        }
     }
 
 
@@ -81,6 +88,7 @@ public class MainMenu : MonoBehaviour
             {
                 activeMenuSprite = menuSpriteNew;
                 backgroundImage.sprite = menuSpite;
+                SaveLoadPrefs.saveMenuSprite(activeMenuSprite);
             }
         }
     }

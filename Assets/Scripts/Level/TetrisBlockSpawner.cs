@@ -44,7 +44,8 @@ public class TetrisBlockSpawner : MonoBehaviour
         else
         {
             int index = Random.Range(0, tetrisObjects.Length);
-            Instantiate(tetrisObjects[index], transform.position, Quaternion.identity);
+            GameObject newTetrisBlock = Instantiate(tetrisObjects[index], transform.position, Quaternion.identity);
+            FindObjectOfType<Level>().SetActiveTetrisBlock(newTetrisBlock.GetComponent<TetrisBlock>());
         }
     }
 }

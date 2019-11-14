@@ -17,6 +17,9 @@ public class Level : MonoBehaviour
     // Level Sprites
     private Sprite[] levelSprites;
 
+    // Active tetris block
+    private TetrisBlock activeTetrisBlock;
+
     // Active panel
     private string activePanel;
 
@@ -32,6 +35,8 @@ public class Level : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CheckPlatform();
+
         Time.timeScale = 1f;
 
         activeSpeedLevel = 1;
@@ -75,7 +80,7 @@ public class Level : MonoBehaviour
 
     private void SetLevelSprite(string levelSpriteNew)
     {
-        levelSpriteNew += CheckScreenOrientation();
+        levelSpriteNew += "-" + CheckScreenOrientation();
 
         foreach (Sprite levelSpite in levelSprites)
         {
@@ -92,15 +97,15 @@ public class Level : MonoBehaviour
     {
         if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
         {
-            return "-horizontal";
+            return "horizontal";
         }
         else if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
         {
-            return "-vertical";
+            return "vertical";
         }
         else
         {
-            return "-square";
+            return "square";
         }
     }
 
@@ -142,6 +147,25 @@ public class Level : MonoBehaviour
     }
 
 
+    public void CheckPlatform()
+    {
+        if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            FindObjectOfType<LevelPanel>().SetInputsVisibility(false);
+        }
+        else if (Application.platform == RuntimePlatform.Android)
+        {
+            FindObjectOfType<LevelPanel>().SetInputsVisibility(true);
+        }
+    }
+
+
+    public void SetActiveTetrisBlock(TetrisBlock newTetrisBlock)
+    {
+        activeTetrisBlock = newTetrisBlock;
+    }
+
+
     /*
      * Events
      * 
@@ -169,6 +193,28 @@ public class Level : MonoBehaviour
     public void ToMenuButtonClick()
     {
         Time.timeScale = 1f;
+        FindObjectOfType<GameMode>().DestroyGameObject();
         SceneManager.LoadScene("MainMenu");
+    }
+
+
+    public void RightButtonClick()
+    {
+        activeTetrisBlock.MoveRight();
+    }
+
+    public void LeftButtonClick()
+    {
+        activeTetrisBlock.MoveLeft();
+    }
+
+    public void RotateButtonClick()
+    {
+        activeTetrisBlock.RotateRight();
+    }
+
+    public void DownButtonClick()
+    {
+        activeTetrisBlock.MoveDown();
     }
 }

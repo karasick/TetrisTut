@@ -34,6 +34,12 @@ public class GameMode : MonoBehaviour
     }
 
 
+    public void DestroyGameObject()
+    {
+        Destroy(gameObject);
+    }
+
+
     public void AddToDeactivated(int index)
     {
         foreach (int deactivatedTetrisObjectsIndex in deactivatedTetrisObjectsIndexes)

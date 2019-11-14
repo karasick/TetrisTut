@@ -7,6 +7,8 @@ public class LevelPanel : MonoBehaviour
 {
     [SerializeField]
     private Level level;
+    [SerializeField]
+    private Button[] inputButtons;
 
     [SerializeField]
     private Text currentScoreText = null;
@@ -34,8 +36,37 @@ public class LevelPanel : MonoBehaviour
     }
 
 
+    public void SetInputsVisibility(bool state)
+    {
+        foreach(Button inputButton in inputButtons)
+        {
+            inputButton.gameObject.SetActive(state);
+        }
+    }
+
+
     public void PauseButtonClick()
     {
         level.PauseButtonClick();
+    }
+
+    public void RightButtonClick()
+    {
+        level.RightButtonClick();
+    }
+
+    public void LeftButtonClick()
+    {
+        level.LeftButtonClick();
+    }
+
+    public void RotateButtonClick()
+    {
+        level.RotateButtonClick();
+    }
+
+    public void DownButtonClick()
+    {
+        level.DownButtonClick();
     }
 }
