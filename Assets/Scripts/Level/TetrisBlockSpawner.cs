@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class TetrisBlockSpawner : MonoBehaviour
 {
-    private GameObject[] tetrisObjects;
+    private GameObject[] TetrisObjects;
 
     void Awake()
     {
@@ -18,7 +18,7 @@ public class TetrisBlockSpawner : MonoBehaviour
 
         if (FindObjectOfType<GameMode>())
         {
-            tetrisObjects = FindObjectOfType<GameMode>().GetTetrisObjects();
+            TetrisObjects = FindObjectOfType<GameMode>().GetTetrisObjects();
 
             SpawnRandom();
         }
@@ -43,8 +43,8 @@ public class TetrisBlockSpawner : MonoBehaviour
         }
         else
         {
-            int index = Random.Range(0, tetrisObjects.Length);
-            GameObject newTetrisBlock = Instantiate(tetrisObjects[index], transform.position, Quaternion.identity);
+            int index = Random.Range(0, TetrisObjects.Length);
+            GameObject newTetrisBlock = Instantiate(TetrisObjects[index], transform.position, Quaternion.identity);
             FindObjectOfType<Level>().SetActiveTetrisBlock(newTetrisBlock.GetComponent<TetrisBlock>());
         }
     }

@@ -9,23 +9,23 @@ public class MainMenu : MonoBehaviour
 {
     // Views binding
     [SerializeField]
-    private GameObject[] panels;
+    private GameObject[] Panels;
 
     // BackgroundImage binding
     [SerializeField]
-    private Image backgroundImage;
+    private Image BackgroundImage;
 
     // Scoreboard
-    public List<int> scoreboard;
+    public List<int> Scoreboard;
 
     // Menu Sprites
-    private Sprite[] menuSprites;
+    private Sprite[] MenuSprites;
 
     // Active panel
-    private string activePanel;
+    private string ActivePanel;
 
     // Active menu sprite
-    private string activeMenuSprite;
+    private string ActiveMenuSprite;
 
 
     // Start is called before the first frame update
@@ -41,7 +41,7 @@ public class MainMenu : MonoBehaviour
 
         if(PlayerPrefs.HasKey("menuSprite"))
         {
-            SetMenuSprite(SaveLoadPrefs.loadMenuSprite());
+            SetMenuSprite(SaveLoad.loadMenuSprite());
         }
         else
         {
@@ -63,32 +63,32 @@ public class MainMenu : MonoBehaviour
     
     private void SetActivePanel(string panelNameNew)
     {
-        foreach(GameObject panel in panels)
+        foreach(GameObject Panel in Panels)
         {
-            if(panel.name == panelNameNew)
+            if(Panel.name == panelNameNew)
             {
                 // Show Active panel
-                panel.SetActive(true);
-                activePanel = panelNameNew;
+                Panel.SetActive(true);
+                ActivePanel = panelNameNew;
             }
             else
             {
-                // Hide another panels
-                panel.SetActive(false);
+                // Hide another Panels
+                Panel.SetActive(false);
             }
         }
     }
 
 
-    private void SetMenuSprite(string menuSpriteNew)
+    private void SetMenuSprite(string menuSprite)
     {
-        foreach (Sprite menuSpite in menuSprites)
+        foreach (Sprite MenuSpite in MenuSprites)
         {
-            if(menuSpite.name == menuSpriteNew)
+            if(MenuSpite.name == menuSprite)
             {
-                activeMenuSprite = menuSpriteNew;
-                backgroundImage.sprite = menuSpite;
-                SaveLoadPrefs.saveMenuSprite(activeMenuSprite);
+                ActiveMenuSprite = menuSprite;
+                BackgroundImage.sprite = MenuSpite;
+                SaveLoad.saveMenuSprite(ActiveMenuSprite);
             }
         }
     }
@@ -96,16 +96,16 @@ public class MainMenu : MonoBehaviour
 
     private void LoadScore()
     {
-        SaveLoadScore.Load();
-        scoreboard = ScoreManager.savedScores;
-        scoreboard.Sort();
-        scoreboard.Reverse();
+        SaveLoad.LoadScore();
+        Scoreboard = ScoreManager.SavedScores;
+        Scoreboard.Sort();
+        Scoreboard.Reverse();
     }
 
 
     private void LoadSprites()
     {
-        menuSprites = Resources.LoadAll<Sprite>("Sprites/menu");
+        MenuSprites = Resources.LoadAll<Sprite>("Sprites/menu");
     }
 
     /*
@@ -115,7 +115,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        FindObjectOfType<GameMode>().gameMode = "original";
+        FindObjectOfType<GameMode>().ActiveGameMode = "original";
         SetActivePanel("GameModePanel");
     }
 
@@ -128,7 +128,7 @@ public class MainMenu : MonoBehaviour
 
     public void CustomModeButtonClick()
     {
-        FindObjectOfType<GameMode>().gameMode = "custom";
+        FindObjectOfType<GameMode>().ActiveGameMode = "custom";
         SetActivePanel("CustomModePanel");
     }
 
@@ -160,19 +160,19 @@ public class MainMenu : MonoBehaviour
     public void ChangeStyleButtonClick()
     {
         int i = 0;
-        foreach(Sprite menuSprite in menuSprites)
+        foreach(Sprite MenuSprite in MenuSprites)
         {
-            if (menuSprite.name == activeMenuSprite)
+            if (MenuSprite.name == ActiveMenuSprite)
             {
-                if(i == (menuSprites.Length - 1))
+                if(i == (MenuSprites.Length - 1))
                 {
-                    activeMenuSprite = menuSprites[0].name;
-                    SetMenuSprite(activeMenuSprite);
+                    ActiveMenuSprite = MenuSprites[0].name;
+                    SetMenuSprite(ActiveMenuSprite);
                 }
                 else
                 {
-                    activeMenuSprite = menuSprites[i + 1].name;
-                    SetMenuSprite(activeMenuSprite);
+                    ActiveMenuSprite = MenuSprites[i + 1].name;
+                    SetMenuSprite(ActiveMenuSprite);
                 }
                 return;
             }
@@ -183,9 +183,9 @@ public class MainMenu : MonoBehaviour
 
     public void BackButtonClick()
     {
-        if (activePanel == "CustomModePanel")
+        if (ActivePanel == "CustomModePanel")
         {
-            FindObjectOfType<GameMode>().gameMode = "original";
+            FindObjectOfType<GameMode>().ActiveGameMode = "original";
             SetActivePanel("GameModePanel");
         }
         else

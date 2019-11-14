@@ -6,38 +6,26 @@ using UnityEngine.UI;
 public class OptionsPanel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
+    private MainMenu MainMenu;
 
     [SerializeField]
-    private Sprite[] menuSprites = null;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //name = "options";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private Sprite[] MenuSprites = null;
 
 
     public Sprite[] GetMenuSprites()
     {
-        return menuSprites;
+        return MenuSprites;
     }
 
 
     public void ChangeStyleButtonClick()
     {
-        mainMenu.ChangeStyleButtonClick();
+        MainMenu.ChangeStyleButtonClick();
     }
 
 
     public void BackButtonClick()
     {
-        mainMenu.BackButtonClick();
+        MainMenu.BackButtonClick();
     }
 }

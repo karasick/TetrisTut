@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class EndGamePanel : MonoBehaviour
 {
     [SerializeField]
-    private Level level;
+    private Level Level;
 
     [SerializeField]
-    private Text endScoreText = null;
+    private Text EndScoreText = null;
 
     // Start is called before the first frame update
     void Start()
@@ -26,18 +26,18 @@ public class EndGamePanel : MonoBehaviour
 
     void Awake()
     {
-        endScoreText.text = "Score: " + ScoreManager.score;
+        EndScoreText.text = "Score: " + ScoreManager.Score;
     }
 
 
     public void RetryButtonClick()
     {
-        level.RetryButtonClick();
+        Level.RetryButtonClick();
     }
 
 
     public void ToMenuButtonClick()
     {
-        level.ToMenuButtonClick();
+        Level.ToMenuButtonClick();
     }
 }

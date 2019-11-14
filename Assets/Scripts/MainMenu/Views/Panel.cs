@@ -5,19 +5,7 @@ using UnityEngine;
 public abstract class Panel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
+    private MainMenu MainMenu;
 
-    public string panelName;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public string PanelName;
 }

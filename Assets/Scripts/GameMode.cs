@@ -5,13 +5,13 @@ using UnityEngine;
 public class GameMode : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] tetrisObjects;
+    private GameObject[] TetrisObjects;
 
-    private List<GameObject> activeTetrisObjects = new List<GameObject>();
+    private List<GameObject> ActiveTetrisObjects = new List<GameObject>();
 
-    private List<int> deactivatedTetrisObjectsIndexes = new List<int>();
+    private List<int> DeactivatedTetrisObjectsIndexes = new List<int>();
 
-    public string gameMode = "original";
+    public string ActiveGameMode = "original";
 
 
     // Start is called before the first frame update
@@ -42,7 +42,7 @@ public class GameMode : MonoBehaviour
 
     public void AddToDeactivated(int index)
     {
-        foreach (int deactivatedTetrisObjectsIndex in deactivatedTetrisObjectsIndexes)
+        foreach (int deactivatedTetrisObjectsIndex in DeactivatedTetrisObjectsIndexes)
         {
             if (deactivatedTetrisObjectsIndex == index)
             {
@@ -50,24 +50,24 @@ public class GameMode : MonoBehaviour
                 return;
             }
         }
-        deactivatedTetrisObjectsIndexes.Add(index);
+        DeactivatedTetrisObjectsIndexes.Add(index);
     }
 
 
     public void RemoveFromDeactivated(int index)
     {
-        deactivatedTetrisObjectsIndexes.Remove(index);
+        DeactivatedTetrisObjectsIndexes.Remove(index);
     }
 
 
     private void SetActiveTetrisObjects()
     {
-        activeTetrisObjects.Clear();
-        for (int i = 0; i < tetrisObjects.Length; i++)
+        ActiveTetrisObjects.Clear();
+        for (int i = 0; i < TetrisObjects.Length; i++)
         {
             if (!IsDeactivated(i))
             {
-                activeTetrisObjects.Add(tetrisObjects[i]);
+                ActiveTetrisObjects.Add(TetrisObjects[i]);
             }
         }
     }
@@ -75,7 +75,7 @@ public class GameMode : MonoBehaviour
 
     private bool IsDeactivated(int index)
     {
-        foreach (int deactivatedTetrisObjectsIndex in deactivatedTetrisObjectsIndexes)
+        foreach (int deactivatedTetrisObjectsIndex in DeactivatedTetrisObjectsIndexes)
         {
             if (index == deactivatedTetrisObjectsIndex)
             {
@@ -88,19 +88,19 @@ public class GameMode : MonoBehaviour
 
     public GameObject[] GetTetrisObjects()
     {
-        if (gameMode == "custom")
+        if (ActiveGameMode == "custom")
         {
             SetActiveTetrisObjects();
-            deactivatedTetrisObjectsIndexes.Clear();
-            if(activeTetrisObjects.Count == 0)
+            DeactivatedTetrisObjectsIndexes.Clear();
+            if(ActiveTetrisObjects.Count == 0)
             {
                 // TODO: block starting
             }
-            return activeTetrisObjects.ToArray();
+            return ActiveTetrisObjects.ToArray();
         }
         else
         {
-            return tetrisObjects;
+            return TetrisObjects;
         }
     }
 }

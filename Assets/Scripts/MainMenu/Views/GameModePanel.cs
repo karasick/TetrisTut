@@ -5,35 +5,23 @@ using UnityEngine;
 public class GameModePanel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //name = "gameMode";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    private MainMenu MainMenu;
 
 
     public void StartGameButtonClick()
     {
-        mainMenu.StartGameButtonClick();
+        MainMenu.StartGameButtonClick();
     }
 
 
     public void CustomModeButtonClick()
     {
-        mainMenu.CustomModeButtonClick();
+        MainMenu.CustomModeButtonClick();
     }
 
 
     public void BackButtonClick()
     {
-        mainMenu.BackButtonClick();
+        MainMenu.BackButtonClick();
     }
 }

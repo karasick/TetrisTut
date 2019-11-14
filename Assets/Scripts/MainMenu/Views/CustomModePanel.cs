@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class CustomModePanel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
+    private MainMenu MainMenu;
 
     [SerializeField]
-    private Button[] checkBoxButtons = null;
+    private Button[] CheckBoxButtons = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,45 +19,39 @@ public class CustomModePanel : MonoBehaviour
         AddListernersToCheckboxes();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 
     private void AddListernersToCheckboxes()
     {
-        for (int i = 0; i < checkBoxButtons.Length; i++)
+        for (int i = 0; i < CheckBoxButtons.Length; i++)
         {
             int closureIndex = i; // Prevents the closure problem
-            checkBoxButtons[closureIndex].onClick.AddListener(() => CheckboxButtonClick(closureIndex));
+            CheckBoxButtons[closureIndex].onClick.AddListener(() => CheckboxButtonClick(closureIndex));
         }
     }
 
 
     public void CheckboxButtonClick(int index)
     {
-        if (checkBoxButtons[index].GetComponent<Image>().sprite.name == "activeCheckbox")
+        if (CheckBoxButtons[index].GetComponent<Image>().sprite.name == "activeCheckbox")
         {
-            checkBoxButtons[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/old/deactivatedCheckbox");
+            CheckBoxButtons[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/old/deactivatedCheckbox");
         }
         else
         {
-            checkBoxButtons[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/old/activeCheckbox");
+            CheckBoxButtons[index].GetComponent<Image>().sprite = Resources.Load<Sprite>("Sprites/old/activeCheckbox");
         }
-        mainMenu.CheckboxButtonClick(index);
+        MainMenu.CheckboxButtonClick(index);
     }
 
 
     public void StartGameButtonClick()
     {
-        mainMenu.StartGameButtonClick();
+        MainMenu.StartGameButtonClick();
     }
 
 
     public void BackButtonClick()
     {
-        mainMenu.BackButtonClick();
+        MainMenu.BackButtonClick();
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PausePanel : MonoBehaviour
 {
     [SerializeField]
-    private Level level;
+    private Level Level;
 
     // Start is called before the first frame update
     void Start()
@@ -22,12 +22,12 @@ public class PausePanel : MonoBehaviour
 
     public void BackButtonClick()
     {
-        level.BackButtonClick();
+        Level.BackButtonClick();
     }
 
 
     public void ToMenuButtonClick()
     {
-        level.ToMenuButtonClick();
+        Level.ToMenuButtonClick();
     }
 }

@@ -8,29 +8,29 @@ public class Level : MonoBehaviour
 {
     // Views binding
     [SerializeField]
-    private GameObject[] panels;
+    private GameObject[] Panels;
 
     // BackgroundImage binding
     [SerializeField]
-    private Image backgroundImage;
+    private Image BackgroundImage;
 
     // Level Sprites
-    private Sprite[] levelSprites;
+    private Sprite[] LevelSprites;
 
     // Active tetris block
-    private TetrisBlock activeTetrisBlock;
+    private TetrisBlock ActiveTetrisBlock;
 
     // Active panel
-    private string activePanel;
+    private string ActivePanel;
 
     // Active speed level
-    private int activeSpeedLevel;
+    private int ActiveSpeedLevel;
 
     // Active menu sprite
-    private string activeLevelSprite;
+    private string ActiveLevelSprite;
 
     // Is player lose
-    public bool isLose = false;
+    public bool IsLose = false;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +39,7 @@ public class Level : MonoBehaviour
 
         Time.timeScale = 1f;
 
-        activeSpeedLevel = 1;
+        ActiveSpeedLevel = 1;
 
         LoadSprites();
 
@@ -61,33 +61,33 @@ public class Level : MonoBehaviour
      */
     private void SetActivePanel(string panelNameNew)
     {
-        foreach (GameObject panel in panels)
+        foreach (GameObject Panel in Panels)
         {
-            if (panel.name == panelNameNew)
+            if (Panel.name == panelNameNew)
             {
                 // Show Active panel
-                panel.SetActive(true);
-                activePanel = panelNameNew;
+                Panel.SetActive(true);
+                ActivePanel = panelNameNew;
             }
             else
             {
-                // Hide another panels
-                panel.SetActive(false);
+                // Hide another Panels
+                Panel.SetActive(false);
             }
         }
     }
 
 
-    private void SetLevelSprite(string levelSpriteNew)
+    private void SetLevelSprite(string levelSprite)
     {
-        levelSpriteNew += "-" + CheckScreenOrientation();
+        levelSprite += "-" + CheckScreenOrientation();
 
-        foreach (Sprite levelSpite in levelSprites)
+        foreach (Sprite LevelSpite in LevelSprites)
         {
-            if (levelSpite.name == levelSpriteNew)
+            if (LevelSpite.name == levelSprite)
             {
-                activeLevelSprite = levelSpriteNew;
-                backgroundImage.sprite = levelSpite;
+                ActiveLevelSprite = levelSprite;
+                BackgroundImage.sprite = LevelSpite;
             }
         }
     }
@@ -112,7 +112,7 @@ public class Level : MonoBehaviour
 
     private void LoadSprites()
     {
-        levelSprites = Resources.LoadAll<Sprite>("Sprites/tetris_background");
+        LevelSprites = Resources.LoadAll<Sprite>("Sprites/tetris_background");
     }
 
 
@@ -120,28 +120,28 @@ public class Level : MonoBehaviour
     {
         Time.timeScale = 0f;
 
-        isLose = true;
+        IsLose = true;
         SetActivePanel("EndGamePanel");
         
-        SaveLoadScore.Save();
+        SaveLoad.SaveScore();
     }
 
 
     private void CheckLevel()
     {
-        if(ScoreManager.speedLevel == 1 && activeSpeedLevel != 1)
+        if(ScoreManager.SpeedLevel == 1 && ActiveSpeedLevel != 1)
         {
-            activeSpeedLevel = 1;
+            ActiveSpeedLevel = 1;
             SetLevelSprite("forest");
         }
-        else if (ScoreManager.speedLevel == 2 && activeSpeedLevel != 2)
+        else if (ScoreManager.SpeedLevel == 2 && ActiveSpeedLevel != 2)
         {
-            activeSpeedLevel = 2;
+            ActiveSpeedLevel = 2;
             SetLevelSprite("west");
         }
-        else if (ScoreManager.speedLevel == 3 && activeSpeedLevel != 3)
+        else if (ScoreManager.SpeedLevel == 3 && ActiveSpeedLevel != 3)
         {
-            activeSpeedLevel = 3;
+            ActiveSpeedLevel = 3;
             SetLevelSprite("desert");
         }
     }
@@ -162,14 +162,10 @@ public class Level : MonoBehaviour
 
     public void SetActiveTetrisBlock(TetrisBlock newTetrisBlock)
     {
-        activeTetrisBlock = newTetrisBlock;
+        ActiveTetrisBlock = newTetrisBlock;
     }
 
 
-    /*
-     * Events
-     * 
-     */
     public void PauseButtonClick()
     {
         Time.timeScale = 0f;
@@ -200,21 +196,21 @@ public class Level : MonoBehaviour
 
     public void RightButtonClick()
     {
-        activeTetrisBlock.MoveRight();
+        ActiveTetrisBlock.MoveRight();
     }
 
     public void LeftButtonClick()
     {
-        activeTetrisBlock.MoveLeft();
+        ActiveTetrisBlock.MoveLeft();
     }
 
     public void RotateButtonClick()
     {
-        activeTetrisBlock.RotateRight();
+        ActiveTetrisBlock.RotateRight();
     }
 
     public void DownButtonClick()
     {
-        activeTetrisBlock.MoveDown();
+        ActiveTetrisBlock.MoveDown();
     }
 }

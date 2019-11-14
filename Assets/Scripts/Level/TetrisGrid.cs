@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class TetrisGrid : MonoBehaviour
 {
-    public static int number_of_rows = 20;
-    public static int number_of_columns = 10;
+    public static int NumberOfRows = 20;
+    public static int NumberOfColumns = 10;
 
-    public static int currentHeight = 0;
+    public static int CurrentHeight = 0;
 
-    //public static Transform[,] grid = new Transform[number_of_columns, number_of_rows];
-    public static Transform[,] grid = new Transform[number_of_columns, number_of_rows];
+    public static Transform[,] Grid = new Transform[NumberOfColumns, NumberOfRows];
 
     // Start is called before the first frame update
     void Start()
@@ -31,25 +30,25 @@ public class TetrisGrid : MonoBehaviour
 
     public static bool IsInsideBorder(Vector2 position)
     {
-        return (int)position.x >= 0 && (int)position.x < number_of_columns && (int)position.y >= 0;
+        return (int)position.x >= 0 && (int)position.x < NumberOfColumns && (int)position.y >= 0;
     }
 
     private static void DecreaseRow(int y)
     {
-        for (int x = 0; x < number_of_columns; ++x)
+        for (int x = 0; x < NumberOfColumns; ++x)
         {
-            if (grid[x, y] != null)
+            if (Grid[x, y] != null)
             {
-                grid[x, y - 1] = grid[x, y];
-                grid[x, y] = null;
-                grid[x, y - 1].position += new Vector3(0, -1, 0);
+                Grid[x, y - 1] = Grid[x, y];
+                Grid[x, y] = null;
+                Grid[x, y - 1].position += new Vector3(0, -1, 0);
             }
         }
     }
 
     private static void DecreaseRowsAbove(int y)
     {
-        for (int i = y; i < number_of_rows; ++i)
+        for (int i = y; i < NumberOfRows; ++i)
         {
             DecreaseRow(i);
         }
@@ -57,9 +56,9 @@ public class TetrisGrid : MonoBehaviour
 
     private static bool IsRowFull(int y)
     {
-        for (int x = 0; x < number_of_columns; ++x)
+        for (int x = 0; x < NumberOfColumns; ++x)
         {
-            if (grid[x, y] == null)
+            if (Grid[x, y] == null)
             {
                 return false;
             }
@@ -69,16 +68,16 @@ public class TetrisGrid : MonoBehaviour
 
     private static void DeleteRow(int y)
     {
-        for (int x = 0; x < number_of_columns; ++x)
+        for (int x = 0; x < NumberOfColumns; ++x)
         {
-            GameObject.Destroy(grid[x, y].gameObject);
-            grid[x, y] = null;
+            GameObject.Destroy(Grid[x, y].gameObject);
+            Grid[x, y] = null;
         }
     }
 
     public static void DeleteRows()
     {
-        for (int y = 0; y < number_of_rows; ++y)
+        for (int y = 0; y < NumberOfRows; ++y)
         {
             if (IsRowFull(y))
             {
@@ -92,15 +91,15 @@ public class TetrisGrid : MonoBehaviour
 
     public static void UpdateTetrisGrid(Transform tetrisBLock)
     {
-        for (int y = 0; y < number_of_rows; ++y)
+        for (int y = 0; y < NumberOfRows; ++y)
         {
-            for (int x = 0; x < number_of_columns; ++x)
+            for (int x = 0; x < NumberOfColumns; ++x)
             {
-                if (grid[x, y] != null)
+                if (Grid[x, y] != null)
                 {
-                    if (grid[x, y].parent == tetrisBLock)
+                    if (Grid[x, y].parent == tetrisBLock)
                     {
-                        grid[x, y] = null;
+                        Grid[x, y] = null;
                     }
                 }
             }
@@ -109,7 +108,7 @@ public class TetrisGrid : MonoBehaviour
         foreach (Transform child in tetrisBLock)
         {
             Vector2 vector = RoundVector(child.position);
-            grid[(int)vector.x, (int)vector.y] = child;
+            Grid[(int)vector.x, (int)vector.y] = child;
         }
     }
 
@@ -124,7 +123,7 @@ public class TetrisGrid : MonoBehaviour
                 return false;
             }
 
-            if (grid[(int)vector.x, (int)vector.y] != null && grid[(int)vector.x, (int)vector.y].parent != tetrisBLock)
+            if (Grid[(int)vector.x, (int)vector.y] != null && Grid[(int)vector.x, (int)vector.y].parent != tetrisBLock)
             {
                 return false;
             }
@@ -134,15 +133,15 @@ public class TetrisGrid : MonoBehaviour
 
     private static void FindCurrentHeight()
     {
-        for (int y = 0; y < number_of_rows; ++y)
+        for (int y = 0; y < NumberOfRows; ++y)
         {
-            for (int x = 0; x < number_of_columns; ++x)
+            for (int x = 0; x < NumberOfColumns; ++x)
             {
-                if (grid[x, y] != null)
+                if (Grid[x, y] != null)
                 {
-                    if((y + 1) >= currentHeight)
+                    if((y + 1) >= CurrentHeight)
                     {
-                        currentHeight = y + 1;
+                        CurrentHeight = y + 1;
                     }
                 }
             }
@@ -153,7 +152,7 @@ public class TetrisGrid : MonoBehaviour
     {
         FindCurrentHeight();
 
-        if (currentHeight >= number_of_rows - 3)
+        if (CurrentHeight >= NumberOfRows - 3)
         {
             return true;
         }
@@ -162,11 +161,11 @@ public class TetrisGrid : MonoBehaviour
 
     public static void ClearGrid()
     {
-        System.Array.Clear(grid, 0, grid.Length);
+        System.Array.Clear(Grid, 0, Grid.Length);
     }
 
     public static void ClearCurrentHeight()
     {
-        currentHeight = 0;
+        CurrentHeight = 0;
     }
 }

@@ -5,40 +5,28 @@ using UnityEngine;
 public class MainPanel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        //name = "mainPanel";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private MainMenu MainMenu;
 
     public void PlayButtonClick()
     {
-        mainMenu.PlayButtonClick();
+        MainMenu.PlayButtonClick();
     }
 
 
     public void OptionsButtonClick()
     {
-        mainMenu.OptionsButtonClick();
+        MainMenu.OptionsButtonClick();
     }
 
 
     public void ScoreboardButtonClick()
     {
-        mainMenu.ScoreboardButtonClick();
+        MainMenu.ScoreboardButtonClick();
     }
 
 
     public void ExitButtonClick()
     {
-        mainMenu.ExitButtonClick();
+        MainMenu.ExitButtonClick();
     }
 }

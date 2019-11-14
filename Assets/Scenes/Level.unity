@@ -1521,6 +1521,16 @@ PrefabInstance:
       propertyPath: endScoreText
       value: 
       objectReference: {fileID: 1980739632}
+    - target: {fileID: 3211324421728922513, guid: f512215a009341546944e2180a05d144,
+        type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 295173468}
+    - target: {fileID: 3211324421728922513, guid: f512215a009341546944e2180a05d144,
+        type: 3}
+      propertyPath: EndScoreText
+      value: 
+      objectReference: {fileID: 1980739632}
     - target: {fileID: 3211324422924239654, guid: f512215a009341546944e2180a05d144,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1667,6 +1677,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
         type: 3}
+      propertyPath: InputButtons.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
       propertyPath: level
       value: 
       objectReference: {fileID: 295173468}
@@ -1700,6 +1715,41 @@ PrefabInstance:
       propertyPath: inputButtons.Array.data[3]
       value: 
       objectReference: {fileID: 1593184607}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 295173468}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: InputButtons.Array.data[0]
+      value: 
+      objectReference: {fileID: 81980951}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: InputButtons.Array.data[1]
+      value: 
+      objectReference: {fileID: 1753783575}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: InputButtons.Array.data[2]
+      value: 
+      objectReference: {fileID: 6464289}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: InputButtons.Array.data[3]
+      value: 
+      objectReference: {fileID: 1593184607}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: CurrentLevelText
+      value: 
+      objectReference: {fileID: 1542195658}
+    - target: {fileID: 5237039995215269302, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: CurrentScoreText
+      value: 
+      objectReference: {fileID: 1501657295}
     - target: {fileID: 5237039994442793916, guid: f91d8702ca2c16d4fac9cc7261784c5a,
         type: 3}
       propertyPath: m_FontData.m_FontSize
@@ -1744,6 +1794,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5237039994407465658, guid: f91d8702ca2c16d4fac9cc7261784c5a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5237039994442793917, guid: f91d8702ca2c16d4fac9cc7261784c5a,
         type: 3}
@@ -1884,6 +1939,11 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 295173468}
+    - target: {fileID: 7240032332586589120, guid: 316b9dcf674f65346a5f29efd675c481,
+        type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 295173468}
     - target: {fileID: 7240032332578359624, guid: 316b9dcf674f65346a5f29efd675c481,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1925,6 +1985,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
         type: 3}
+      propertyPath: Panels.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
       propertyPath: panels.Array.data[0]
       value: 
       objectReference: {fileID: 194410177}
@@ -1943,6 +2008,26 @@ PrefabInstance:
       propertyPath: backgroundImage
       value: 
       objectReference: {fileID: 1360013493}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: BackgroundImage
+      value: 
+      objectReference: {fileID: 1360013493}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: Panels.Array.data[0]
+      value: 
+      objectReference: {fileID: 194410177}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: Panels.Array.data[1]
+      value: 
+      objectReference: {fileID: 2085592360}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: Panels.Array.data[2]
+      value: 
+      objectReference: {fileID: 774013862}
     - target: {fileID: 8287588041440599303, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
         type: 3}
       propertyPath: m_LocalPosition.x

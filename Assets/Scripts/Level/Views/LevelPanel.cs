@@ -6,14 +6,14 @@ using UnityEngine.UI;
 public class LevelPanel : MonoBehaviour
 {
     [SerializeField]
-    private Level level;
+    private Level Level;
     [SerializeField]
-    private Button[] inputButtons;
+    private Button[] InputButtons;
 
     [SerializeField]
-    private Text currentScoreText = null;
+    private Text CurrentScoreText = null;
     [SerializeField]
-    private Text currentLevelText = null;
+    private Text CurrentLevelText = null;
 
 
     // Start is called before the first frame update
@@ -31,14 +31,14 @@ public class LevelPanel : MonoBehaviour
 
     private void SetTextInformation()
     {
-        currentLevelText.text = "Lvl: " + ScoreManager.speedLevel;
-        currentScoreText.text = "Score: " + ScoreManager.score;
+        CurrentLevelText.text = "Lvl: " + ScoreManager.SpeedLevel;
+        CurrentScoreText.text = "Score: " + ScoreManager.Score;
     }
 
 
     public void SetInputsVisibility(bool state)
     {
-        foreach(Button inputButton in inputButtons)
+        foreach(Button inputButton in InputButtons)
         {
             inputButton.gameObject.SetActive(state);
         }
@@ -47,26 +47,26 @@ public class LevelPanel : MonoBehaviour
 
     public void PauseButtonClick()
     {
-        level.PauseButtonClick();
+        Level.PauseButtonClick();
     }
 
     public void RightButtonClick()
     {
-        level.RightButtonClick();
+        Level.RightButtonClick();
     }
 
     public void LeftButtonClick()
     {
-        level.LeftButtonClick();
+        Level.LeftButtonClick();
     }
 
     public void RotateButtonClick()
     {
-        level.RotateButtonClick();
+        Level.RotateButtonClick();
     }
 
     public void DownButtonClick()
     {
-        level.DownButtonClick();
+        Level.DownButtonClick();
     }
 }

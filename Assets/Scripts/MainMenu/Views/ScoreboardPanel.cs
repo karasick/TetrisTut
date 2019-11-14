@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class ScoreboardPanel : MonoBehaviour
 {
     [SerializeField]
-    private MainMenu mainMenu;
+    private MainMenu MainMenu;
 
     [SerializeField]
-    private Text[] topPlayersScoresObjects = null;
+    private Text[] TopPlayersScoresObjects = null;
 
     // Start is called before the first frame update
     void Start()
@@ -19,23 +19,17 @@ public class ScoreboardPanel : MonoBehaviour
         FillScoresText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     private void FillScoresText()
     {
         int i = 0;
-        foreach (Text topPlayerScoreObject in topPlayersScoresObjects)
+        foreach (Text TopPlayerScoreObject in TopPlayersScoresObjects)
         {
             i++;
-            if (i <= mainMenu.scoreboard.Count)
+            if (i <= MainMenu.Scoreboard.Count)
             {
-                int topScore = mainMenu.scoreboard[i - 1];
-                topPlayerScoreObject.text = "Top " + i + ": " + topScore;
+                int topScore = MainMenu.Scoreboard[i - 1];
+                TopPlayerScoreObject.text = "Top " + i + ": " + topScore;
             }
             else
             {
@@ -47,6 +41,6 @@ public class ScoreboardPanel : MonoBehaviour
 
     public void BackButtonClick()
     {
-        mainMenu.BackButtonClick();
+        MainMenu.BackButtonClick();
     }
 }

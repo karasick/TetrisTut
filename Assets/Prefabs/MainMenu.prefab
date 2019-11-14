@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e977363e8bfb54043a7262d7a39d97a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panels:
+  Panels:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  backgroundImage: {fileID: 0}
-  scoreboard: 
+  BackgroundImage: {fileID: 0}
+  Scoreboard: 

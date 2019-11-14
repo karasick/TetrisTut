@@ -5,20 +5,20 @@ using UnityEngine;
 
 public class TetrisBlock : MonoBehaviour
 {
-    private LevelPanel levelPanel;
+    private LevelPanel LevelPanel;
 
-    public float fallSpeed = 1f;
+    public float FallSpeed = 1f;
 
-    private float pushSpeed = 0.1f;
-    private float levelSpeedAcceleration = 0.25f;
-    private float fallTime = 0f;
+    private float PushSpeed = 0.1f;
+    private float LevelSpeedAcceleration = 0.25f;
+    private float FallTime = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        levelPanel = FindObjectOfType<LevelPanel>();
-        fallSpeed = fallSpeed - (float)ScoreManager.speedLevel * levelSpeedAcceleration;
-        InvokeRepeating("BlockFall", 0f, fallSpeed);
+        LevelPanel = FindObjectOfType<LevelPanel>();
+        FallSpeed = FallSpeed - (float)ScoreManager.SpeedLevel * LevelSpeedAcceleration;
+        InvokeRepeating("BlockFall", 0f, FallSpeed);
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class TetrisBlock : MonoBehaviour
         {
             CheckUserInput();
 
-            fallTime = Time.time;
+            FallTime = Time.time;
         }
     }
 
@@ -70,12 +70,12 @@ public class TetrisBlock : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
         {
             CancelInvoke("BlockFall");
-            InvokeRepeating("BlockFall", 0f, pushSpeed);
+            InvokeRepeating("BlockFall", 0f, PushSpeed);
         }
         else if (Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.S))
         {
             CancelInvoke("BlockFall");
-            InvokeRepeating("BlockFall", 0f, fallSpeed);
+            InvokeRepeating("BlockFall", 0f, FallSpeed);
         }
     }
 

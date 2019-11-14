@@ -75,9 +75,8 @@
     <Compile Include="Assets\Scripts\MainMenu\Views\OptionsPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\Panel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\ScoreboardPanel.cs" />
-    <Compile Include="Assets\Scripts\SaveLoadPrefs.cs" />
-    <Compile Include="Assets\Scripts\Score\SaveLoadScore.cs" />
-    <Compile Include="Assets\Scripts\Score\ScoreManager.cs" />
+    <Compile Include="Assets\Scripts\SaveLoad.cs" />
+    <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/[projects]/Unity/GitHub/TetrisTut/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
