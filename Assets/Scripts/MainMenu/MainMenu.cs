@@ -104,7 +104,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButtonClick()
     {
-        FindObjectOfType<GameMode>().ActiveGameMode = "original";
+        GameMode.ActiveGameMode = Mode.Original;
         SetActivePanel("GameModePanel");
     }
 
@@ -117,14 +117,14 @@ public class MainMenu : MonoBehaviour
 
     public void CustomModeButtonClick()
     {
-        FindObjectOfType<GameMode>().ActiveGameMode = "custom";
+        GameMode.ActiveGameMode = Mode.Custom;
         SetActivePanel("CustomModePanel");
     }
 
 
     public void CheckboxButtonClick(int index)
     {
-        FindObjectOfType<GameMode>().AddToDeactivated(index);
+        GameMode.AddToDeactivated(index);
     }
 
 
@@ -174,7 +174,7 @@ public class MainMenu : MonoBehaviour
     {
         if (ActivePanel == "CustomModePanel")
         {
-            FindObjectOfType<GameMode>().ActiveGameMode = "original";
+            GameMode.ActiveGameMode = Mode.Original;
             SetActivePanel("GameModePanel");
         }
         else

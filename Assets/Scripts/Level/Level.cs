@@ -29,6 +29,9 @@ public class Level : MonoBehaviour
     // Active menu sprite
     private string ActiveLevelSprite;
 
+    // Active platform
+    public RuntimePlatform ActivePlatform;
+
     // Is player lose
     public bool IsLose = false;
 
@@ -45,13 +48,7 @@ public class Level : MonoBehaviour
 
         SetActivePanel("GamePanel");
 
-        SetLevelSprite("forest");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        CheckLevel();
+        SetSpeedLevel(1);
     }
 
 
@@ -75,6 +72,19 @@ public class Level : MonoBehaviour
                 Panel.SetActive(false);
             }
         }
+    }
+
+
+    private GameObject GetPanel(string panelName)
+    {
+        foreach (GameObject Panel in Panels)
+        {
+            if (Panel.name == panelName)
+            {
+                return Panel;
+            }
+        }
+        return null;
     }
 
 
@@ -127,23 +137,41 @@ public class Level : MonoBehaviour
     }
 
 
-    private void CheckLevel()
+    public void SetSpeedLevel(int speedLevel)
     {
-        if(ScoreManager.SpeedLevel == 1 && ActiveSpeedLevel != 1)
+        switch(speedLevel)
         {
-            ActiveSpeedLevel = 1;
-            SetLevelSprite("forest");
+            case 1:
+            {
+                ActiveSpeedLevel = speedLevel;
+                SetLevelSprite("forest");
+                break;
+            }
+            case 2:
+            {
+                ActiveSpeedLevel = speedLevel;
+                SetLevelSprite("west");
+                break;
+            }
+            case 3:
+            {
+                ActiveSpeedLevel = speedLevel;
+                SetLevelSprite("desert");
+                break;
+            }
+            default:
+            {
+                ActiveSpeedLevel = 1;
+                SetLevelSprite("forest");
+                break;
+            }
         }
-        else if (ScoreManager.SpeedLevel == 2 && ActiveSpeedLevel != 2)
-        {
-            ActiveSpeedLevel = 2;
-            SetLevelSprite("west");
-        }
-        else if (ScoreManager.SpeedLevel == 3 && ActiveSpeedLevel != 3)
-        {
-            ActiveSpeedLevel = 3;
-            SetLevelSprite("desert");
-        }
+    }
+
+
+    public int GetSpeedLevel()
+    {
+        return ActiveSpeedLevel;
     }
 
 
@@ -151,11 +179,11 @@ public class Level : MonoBehaviour
     {
         if (Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WindowsEditor)
         {
-            FindObjectOfType<GamePanel>().SetInputsVisibility(false);
+            ActivePlatform = RuntimePlatform.WindowsPlayer;
         }
         else if (Application.platform == RuntimePlatform.Android)
         {
-            FindObjectOfType<GamePanel>().SetInputsVisibility(true);
+            ActivePlatform = RuntimePlatform.Android;
         }
     }
 
@@ -176,7 +204,7 @@ public class Level : MonoBehaviour
     public void BackButtonClick()
     {
         Time.timeScale = 1f;
-        SetActivePanel("LevelPanel");
+        SetActivePanel("GamePanel");
     }
 
 
@@ -189,7 +217,6 @@ public class Level : MonoBehaviour
     public void ToMenuButtonClick()
     {
         Time.timeScale = 1f;
-        FindObjectOfType<GameMode>().DestroyGameObject();
         SceneManager.LoadScene("MainMenu");
     }
 

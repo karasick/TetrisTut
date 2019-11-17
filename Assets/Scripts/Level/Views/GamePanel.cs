@@ -13,6 +13,29 @@ public class GamePanel : LevelPanel
     [SerializeField]
     private Text CurrentLevelText = null;
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        switch(Level.ActivePlatform)
+        {
+            case RuntimePlatform.WindowsPlayer:
+                {
+                    SetInputsVisibility(false);
+                    break;
+                }
+            case RuntimePlatform.Android:
+                {
+                    SetInputsVisibility(true);
+                    break;
+                }
+            default:
+                {
+                    SetInputsVisibility(true);
+                    break;
+                }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,12 +45,12 @@ public class GamePanel : LevelPanel
 
     private void SetTextInformation()
     {
-        CurrentLevelText.text = "Lvl: " + ScoreManager.SpeedLevel;
+        CurrentLevelText.text = "Lvl: " + Level.GetSpeedLevel();
         CurrentScoreText.text = "Score: " + ScoreManager.Score;
     }
 
 
-    public void SetInputsVisibility(bool state)
+    private void SetInputsVisibility(bool state)
     {
         foreach(Button inputButton in InputButtons)
         {

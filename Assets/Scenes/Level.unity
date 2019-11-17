@@ -617,6 +617,50 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &535268038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535268040}
+  - component: {fileID: 535268039}
+  m_Layer: 0
+  m_Name: TetrisTimer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &535268039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535268038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbab9ee7c5ad05a469f5bf7387ed3c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTimeElapsed: 0
+--- !u!4 &535268040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535268038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.327917, y: 1.3205509, z: 247.11836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &774013862 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3211324421728922525, guid: f512215a009341546944e2180a05d144,
@@ -713,6 +757,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2728764213761348121, guid: d042b78b674d46d44b32fa5010884260,
+        type: 3}
+      propertyPath: Level
+      value: 
+      objectReference: {fileID: 295173468}
+    - target: {fileID: 2728764213761348121, guid: d042b78b674d46d44b32fa5010884260,
+        type: 3}
+      propertyPath: TetrisTimer
+      value: 
+      objectReference: {fileID: 535268039}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d042b78b674d46d44b32fa5010884260, type: 3}
 --- !u!4 &963074467 stripped
@@ -1210,6 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5433adcf2489f94793b39ceb9ef536d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Level: {fileID: 295173468}
 --- !u!114 &1980739632 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3211324422667196427, guid: f512215a009341546944e2180a05d144,
@@ -2028,6 +2083,16 @@ PrefabInstance:
       propertyPath: Panels.Array.data[2]
       value: 
       objectReference: {fileID: 774013862}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: ActiveSpeedLevel
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8287588041440599302, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
+        type: 3}
+      propertyPath: ActivePlatform
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8287588041440599303, guid: efc69b1606ff89e41a53f1d1ae6fd52f,
         type: 3}
       propertyPath: m_LocalPosition.x

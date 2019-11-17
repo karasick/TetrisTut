@@ -62,9 +62,20 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\GameMode.cs" />
     <Compile Include="Assets\Scripts\Level\Level.cs" />
-    <Compile Include="Assets\Scripts\Level\TetrisBlock.cs" />
-    <Compile Include="Assets\Scripts\Level\TetrisBlockSpawner.cs" />
-    <Compile Include="Assets\Scripts\Level\TetrisGrid.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\TetrisBlock.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\TetrisBlocks.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\TetrisBlockSpawner.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\TetrisGrid.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\DownTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\LeftTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\PushDownTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\RightTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\RotateRightTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\TetrisTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\TetrisTransformProcessor.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\TetrisTransformState.cs" />
+    <Compile Include="Assets\Scripts\Level\Tetris\Transforms\UpTransform.cs" />
+    <Compile Include="Assets\Scripts\Level\TetrisTimer.cs" />
     <Compile Include="Assets\Scripts\Level\Views\EndGamePanel.cs" />
     <Compile Include="Assets\Scripts\Level\Views\GamePanel.cs" />
     <Compile Include="Assets\Scripts\Level\Views\LevelPanel.cs" />
@@ -76,6 +87,7 @@
     <Compile Include="Assets\Scripts\MainMenu\Views\MainPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\OptionsPanel.cs" />
     <Compile Include="Assets\Scripts\MainMenu\Views\ScoreboardPanel.cs" />
+    <Compile Include="Assets\Scripts\Mode.cs" />
     <Compile Include="Assets\Scripts\SaveLoad.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

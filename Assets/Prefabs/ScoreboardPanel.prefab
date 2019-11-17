@@ -86,10 +86,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3200304184305111577}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 173655dd8a977e24db525e856db8b118, type: 3}
+  m_Script: {fileID: 11500000, guid: 07abec27a4a3c9c4ca2c08cd5a8a1bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topPlayersScoresObjects: []
+  MainMenu: {fileID: 0}
+  TopPlayersScoresObjects: []
 --- !u!1 &3200304184433049519
 GameObject:
   m_ObjectHideFlags: 0

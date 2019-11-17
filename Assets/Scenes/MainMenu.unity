@@ -1426,6 +1426,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2706301829885577456, guid: 32ed67910e64d044ba9ad221cb862bb2,
         type: 3}
+    - target: {fileID: 2360047001007569996, guid: 77c753962b58dfe4eae36a485fa1bd7e,
+        type: 3}
+      propertyPath: AllTetrisBlocks
+      value: 
+      objectReference: {fileID: 11400000, guid: 220fee5811c177e4daaf27f58a12eb41,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77c753962b58dfe4eae36a485fa1bd7e, type: 3}
 --- !u!1001 &2995977525526023218
