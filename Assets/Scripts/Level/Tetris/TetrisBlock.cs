@@ -13,7 +13,7 @@ public class TetrisBlock : MonoBehaviour
 
     private TetrisTimer TetrisTimer;
 
-    public float FallSpeed = 0.5f;
+    private float FallSpeed = 1f;
 
     private float PushSpeed = 0.1f;
     private float LevelSpeedAcceleration = 0.25f;

@@ -32,6 +32,9 @@ public class Level : MonoBehaviour
     // Active platform
     public RuntimePlatform ActivePlatform;
 
+    // Active menu sprite
+    private string ActiveScreenOrientation;
+
     // Is player lose
     public bool IsLose = false;
 
@@ -49,6 +52,15 @@ public class Level : MonoBehaviour
         SetActivePanel("GamePanel");
 
         SetSpeedLevel(1);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(CheckScreenOrientation() != ActiveScreenOrientation)
+        {
+            SetLevelSprite(ActiveLevelSprite);
+        }
     }
 
 
@@ -90,7 +102,8 @@ public class Level : MonoBehaviour
 
     private void SetLevelSprite(string levelSprite)
     {
-        levelSprite += "-" + CheckScreenOrientation();
+        ActiveScreenOrientation = CheckScreenOrientation();
+        levelSprite += "-" + ActiveScreenOrientation;
 
         foreach (Sprite LevelSpite in LevelSprites)
         {

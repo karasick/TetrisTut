@@ -14,7 +14,7 @@ public class ScoreManager : MonoBehaviour
 
     public static float GameTime = 0;
     public static int Score = 0;
-    public static int SecFoLevelingUp = 5;
+    public static int SecFoLevelingUp = 15;
     public static int MaxSpeedLevel = 3;
 
 
